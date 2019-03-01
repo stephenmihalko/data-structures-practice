@@ -1,5 +1,6 @@
 public class LinkedList<T>
 {
+	Node<T> first;
 	int size;
 	
 	public LinkedList()
@@ -9,7 +10,8 @@ public class LinkedList<T>
 	
 	public void addToBeginning(T data)
 	{
-		
+		first = new Node(data, first);
+		size++;
 	}
 	
 	public void addToEnd(T data)
@@ -17,10 +19,7 @@ public class LinkedList<T>
 		
 	}
 	
-	public int size()
-	{
-		return size;
-	}
+	public int size() { return size; }
 	
 	public T getBeginning()
 	{
@@ -51,6 +50,12 @@ public class LinkedList<T>
 		{
 			data = d;
 			// Keep next as null
+		}
+		
+		public Node(T d, Node nx)
+		{
+			data = d;
+			next = nx;
 		}
 	}
 }
