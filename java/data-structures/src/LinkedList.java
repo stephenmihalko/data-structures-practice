@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 /**
  * 
  * @author SMihalko
@@ -68,7 +69,7 @@ public class LinkedList<T>
 	public T getBeginning()
 	{
 		if (first == null)
-			return null;
+			throw new NoSuchElementException("Cannot get node from empty list.");
 		else
 			return first.data;
 	}
@@ -80,7 +81,7 @@ public class LinkedList<T>
 	public T getEnd()
 	{
 		if (first == null)
-			return null;
+			throw new NoSuchElementException("Cannot get node from empty list.");
 		else
 		{
 			// Get to the last node in the list
@@ -99,7 +100,7 @@ public class LinkedList<T>
 	public T removeBeginning()
 	{
 		if (first == null)
-			return null;
+			throw new NoSuchElementException("Cannot remove node from empty list.");
 		
 		T ret = this.getBeginning();
 		first = first.next;
@@ -115,7 +116,7 @@ public class LinkedList<T>
 	{
 		// If it's an empty list.
 		if (first == null)
-			return null;
+			throw new NoSuchElementException("Cannot remove node from empty list.");
 		// If there's only one element.
 		else if (first.next == null)
 		{
