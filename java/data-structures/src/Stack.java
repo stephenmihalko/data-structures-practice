@@ -64,5 +64,13 @@ public class Stack<T>
 	{
 		return list.search(item);
 	}
+	
+	/**
+	 * 
+	 */
+	public String toString()
+	{
+		return list.toString();
+	}
 
 }
