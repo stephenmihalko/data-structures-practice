@@ -144,7 +144,6 @@ public class LinkedList<T>
 	 */
 	public String toString()
 	{
-		
 		String ret = "| ";
 		Node<T> n = first;
 		if (first == null)
