@@ -70,7 +70,7 @@ public class Stack<T>
 	 */
 	public String toString()
 	{
-		return list.toString();
+		return list.toString().substring(2);
 	}
 
 }

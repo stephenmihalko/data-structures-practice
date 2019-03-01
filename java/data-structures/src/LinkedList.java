@@ -159,11 +159,12 @@ public class LinkedList<T>
 	{
 		Node<T> n = first;
 		int i = 1;
-		while (n != null)
+		while (n != null && i <= size)
 		{
 			if (n.data.equals(item))
 				return i;
 			i++;
+			n = n.next;
 		}
 		return -1;
 	}
