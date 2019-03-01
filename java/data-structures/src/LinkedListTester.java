@@ -11,14 +11,16 @@ public class LinkedListTester
 		System.out.println(begin);
 		
 		System.out.println("====== Testing add to beginning ======");
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 37; i++)
 			begin.addToBeginning(i);
 		System.out.println(begin);
+		System.out.println("Size = " + begin.size());
 		
 		System.out.println("====== Testing add to end ======");
 		for (int i = 0; i < 10; i++)
 			end.addToEnd(i);
 		System.out.println(end);
+		System.out.println("Size = " + end.size());
 		
 	}
 
