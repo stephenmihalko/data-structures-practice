@@ -1,5 +1,12 @@
-public class LinkedList
+public class LinkedList<T>
 {
+	int size;
+	
+	public LinkedList()
+	{
+		size = 0;
+	}
+	
 	public class Node<T>
 	{
 		T data;
