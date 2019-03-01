@@ -198,8 +198,8 @@ public class LinkedList<T>
 	 */
 	private class Node<T>
 	{
-		T data;
-		Node<T> next;
+		private T data;
+		private Node<T> next;
 		
 		public Node(T d)
 		{
