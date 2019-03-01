@@ -41,6 +41,10 @@ public class LinkedListTester
 		System.out.println();
 		
 		
+		System.out.println("====== Testing contains ======");
+		System.out.println("List contains 22: " + list.contains(22));
+		System.out.println("List contains -19: " + list.contains(-19));
+		
 		System.out.println("====== Testing get end ======");
 		System.out.println("First element: " + list.getEnd());
 		System.out.println("List after getting: " + list);

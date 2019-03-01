@@ -142,6 +142,23 @@ public class LinkedList<T>
 	
 	/**
 	 * 
+	 * @param item
+	 * @return
+	 */
+	public boolean contains(T item)
+	{		
+		Node<T> n = first;
+		while (n != null)
+		{
+			if (n.data.equals(item))
+				return true;
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * 
 	 */
 	public String toString()
 	{
