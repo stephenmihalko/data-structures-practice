@@ -34,9 +34,12 @@ public class LinkedList<T>
 	
 	public int size() { return size; }
 	
-	//public T getBeginning()
+	public T getBeginning()
 	{
-		
+		if (first == null)
+			return null;
+		else
+			return first.data;
 	}
 	
 	//public T getEnd()
@@ -44,9 +47,15 @@ public class LinkedList<T>
 		
 	}
 	
-	//public T removeBeginning()
+	public T removeBeginning()
 	{
+		if (first == null)
+			return null;
 		
+		T ret = this.getBeginning();
+		first = first.next;
+		size--;
+		return ret;
 	}
 	
 	//public T removeEnd()
