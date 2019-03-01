@@ -11,46 +11,45 @@ public class LinkedList<T>
 	public void addToBeginning(T data)
 	{
 		// Create new node and add the pointer to the old "first" as its next
-		first = new Node(data, first);
+		first = new Node<T>(data, first);
 		size++;
 	}
 	
 	public void addToEnd(T data)
 	{
 		if (first == null)
-			this.addToBeginning(data)
+			this.addToBeginning(data);
 		else
 		{
 			// Get to the last node in the list
-			Node n = first;
+			Node<T> n = first;
 			while (n.next != null)
 				n = n.next;
 			
 			// Create new node and set the next of the previous "last" to the new node
-			n.next = new Node(data)
-			
+			n.next = new Node<T>(data);
 			size++;
 		}
 	}
 	
 	public int size() { return size; }
 	
-	public T getBeginning()
+	//public T getBeginning()
 	{
 		
 	}
 	
-	public T getEnd()
+	//public T getEnd()
 	{
 		
 	}
 	
-	public T removeBeginning()
+	//public T removeBeginning()
 	{
 		
 	}
 	
-	public T removeEnd()
+	//public T removeEnd()
 	{
 		
 	}
@@ -59,15 +58,15 @@ public class LinkedList<T>
 	{
 		
 		String ret = "| ";
-		Node n = first;
+		Node<T> n = first;
 		if (first == null)
 			return null;
 		else
 		{
 			while (n != null)
 			{
-				ret += n.data.toString() + " | "
-				n = n.next
+				ret += n.data.toString() + " | ";
+				n = n.next;
 			}
 			// Chop off the last space.
 			return ret.substring(0, ret.length()-1);
@@ -77,7 +76,7 @@ public class LinkedList<T>
 	public class Node<T>
 	{
 		T data;
-		Node next;
+		Node<T> next;
 		
 		public Node(T d)
 		{
@@ -85,7 +84,7 @@ public class LinkedList<T>
 			// Keep next as null
 		}
 		
-		public Node(T d, Node nx)
+		public Node(T d, Node<T> nx)
 		{
 			data = d;
 			next = nx;
