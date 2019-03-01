@@ -50,7 +50,7 @@ public class Queue<T>
 	 * 
 	 * @return
 	 */
-	public boolean isEmpty()
+	public boolean empty()
 	{
 		return list.size() == 0;
 	}
@@ -71,6 +71,6 @@ public class Queue<T>
 	public String toString()
 	{
 		String listStr = list.toString();
-		return "<-- " + listStr.substring(2, listStr.length()) + " <--";
+		return "<-- " + listStr.substring(2, listStr.length()-1) + " <--";
 	}
 }
