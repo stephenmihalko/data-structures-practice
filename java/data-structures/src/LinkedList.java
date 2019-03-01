@@ -147,14 +147,25 @@ public class LinkedList<T>
 	 */
 	public boolean contains(T item)
 	{		
+		return this.search(item) != -1;
+	}
+	
+	/**
+	 * 
+	 * @param item
+	 * @return
+	 */
+	public int search(T item)
+	{
 		Node<T> n = first;
+		int i = 1;
 		while (n != null)
 		{
 			if (n.data.equals(item))
-				return true;
+				return i;
+			i++;
 		}
-		
-		return false;
+		return -1;
 	}
 	
 	/**
