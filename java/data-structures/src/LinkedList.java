@@ -1,13 +1,32 @@
+/**
+ * 
+ * @author SMihalko
+ *
+ * @param <T>
+ */
 public class LinkedList<T>
 {
+	/**
+	 * 
+	 */
 	Node<T> first;
+	/**
+	 * 
+	 */
 	int size;
 	
+	/**
+	 * 
+	 */
 	public LinkedList()
 	{
 		size = 0;
 	}
 	
+	/**
+	 * 
+	 * @param data
+	 */
 	public void addToBeginning(T data)
 	{
 		// Create new node and add the pointer to the old "first" as its next
@@ -15,6 +34,10 @@ public class LinkedList<T>
 		size++;
 	}
 	
+	/**
+	 * 
+	 * @param data
+	 */
 	public void addToEnd(T data)
 	{
 		if (first == null)
@@ -32,8 +55,16 @@ public class LinkedList<T>
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public int size() { return size; }
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public T getBeginning()
 	{
 		if (first == null)
@@ -42,11 +73,29 @@ public class LinkedList<T>
 			return first.data;
 	}
 	
-	//public T getEnd()
+	/**
+	 * 
+	 * @return
+	 */
+	public T getEnd()
 	{
-		
+		if (first == null)
+			return null;
+		else
+		{
+			// Get to the last node in the list
+			Node<T> n = first;
+			while (n.next != null)
+				n = n.next;
+			
+			return n.data;
+		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public T removeBeginning()
 	{
 		if (first == null)
@@ -58,11 +107,41 @@ public class LinkedList<T>
 		return ret;
 	}
 	
-	//public T removeEnd()
+	/**
+	 * 
+	 * @return
+	 */
+	public T removeEnd()
 	{
-		
+		// If it's an empty list.
+		if (first == null)
+			return null;
+		// If there's only one element.
+		else if (first.next == null)
+		{
+			T ret = first.data;
+			first = null;
+			size--;
+			return ret;
+		}
+		// If there are 2+ elements
+		else
+		{
+			Node<T> curr = first, prev = first;
+			while (curr.next != null)
+			{
+				prev = curr;
+				curr = curr.next;
+			}
+			prev.next = null;
+			size--;
+			return curr.data;
+		}
 	}
 	
+	/**
+	 * 
+	 */
 	public String toString()
 	{
 		
@@ -82,7 +161,13 @@ public class LinkedList<T>
 		}
 	}
 	
-	public class Node<T>
+	/**
+	 * 
+	 * @author SMihalko
+	 *
+	 * @param <T>
+	 */
+	private class Node<T>
 	{
 		T data;
 		Node<T> next;
