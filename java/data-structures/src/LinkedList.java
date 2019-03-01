@@ -9,11 +9,11 @@ public class LinkedList<T>
 	/**
 	 * 
 	 */
-	Node<T> first;
+	private Node<T> first;
 	/**
 	 * 
 	 */
-	int size;
+	private int size;
 	
 	/**
 	 * 
