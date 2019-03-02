@@ -68,8 +68,11 @@ public class Queue<T>
 	}
 	
 	/**
-	 * 
+	 * Prints this queue with the front at the left and pipes between elements.
+	 * Uses arrows "<--" to show directionality of printing.
+	 * Uses the toString() method of the data stored in this list.
 	 */
+	 @Override
 	public String toString()
 	{
 		String listStr = list.toString();
