@@ -55,9 +55,12 @@ public class Queue<T>
 	}
 	
 	/**
-	 * 
-	 * @param item
-	 * @return
+	 * Determines the location of the element in this queue as a distance
+	 * from the front of this queue. The first element is defined to be
+	 * 1 element from the front. Returns -1 if the element does not exist
+	 * in this queue.
+	 * @param item the element to be searched in this queue
+	 * @return the 1-based index of the element from the front of the queue
 	 */
 	public int search(T item)
 	{
@@ -73,3 +76,4 @@ public class Queue<T>
 		return "<-- " + listStr.substring(2, listStr.length()-1) + " <--";
 	}
 }
+	
