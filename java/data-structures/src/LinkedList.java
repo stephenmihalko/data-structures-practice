@@ -1,23 +1,17 @@
 import java.util.NoSuchElementException;
 /**
- * 
- * @author SMihalko
+ * A class that implements a LinkedList. Note: this class does not implement any interface
+ * that the official LinkedList does, so it does not have the required methods.
  *
- * @param <T>
+ * @param <T> the class of objects to be stored in the Linked List
  */
 public class LinkedList<T>
 {
-	/**
-	 * 
-	 */
 	private Node<T> first;
-	/**
-	 * 
-	 */
 	private int size;
 	
 	/**
-	 * 
+	 * Constructs an empty list.
 	 */
 	public LinkedList()
 	{
@@ -25,8 +19,18 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @param data
+	 * Constructs a list containing the specified element.
+	 * @param data the element to be stored in this list
+	 */
+	public LinkedList(T data)
+	{
+		size = 1;
+		this.addToEnd(data);
+	}
+	
+	/**
+	 * Inserts the specified element at the beginning of this list.
+	 * @param data the element to add
 	 */
 	public void addToBeginning(T data)
 	{
@@ -36,8 +40,8 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @param data
+	 * Inserts the specified element at the end of this list.
+	 * @param data the element to add
 	 */
 	public void addToEnd(T data)
 	{
@@ -57,31 +61,33 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the number of elements in this list.
+	 * @return the number of elements in this list
 	 */
 	public int size() { return size; }
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the first element in this list.
+	 * @return the first element in this list
+	 * @throws NoSuchElementException if this list is empty
 	 */
 	public T getBeginning()
 	{
 		if (first == null)
-			throw new NoSuchElementException("Cannot get node from empty list.");
+			throw new NoSuchElementException("Cannot get element from empty list.");
 		else
 			return first.data;
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the last element in this list.
+	 * @return the last element in this list
+	 * @throws NoSuchElementException if this list is empty
 	 */
 	public T getEnd()
 	{
 		if (first == null)
-			throw new NoSuchElementException("Cannot get node from empty list.");
+			throw new NoSuchElementException("Cannot get element from empty list.");
 		else
 		{
 			// Get to the last node in the list
@@ -94,13 +100,14 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Removes and returns the first element in this list.
+	 * @return the first element in this list
+	 * @throws NoSuchElementException if this list is empty
 	 */
 	public T removeBeginning()
 	{
 		if (first == null)
-			throw new NoSuchElementException("Cannot remove node from empty list.");
+			throw new NoSuchElementException("Cannot remove element from empty list.");
 		
 		T ret = this.getBeginning();
 		first = first.next;
@@ -109,14 +116,15 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Removes and returns the last element in this list.
+	 * @return the last element in this list
+	 * @throws NoSuchElementException if this list is empty
 	 */
 	public T removeEnd()
 	{
 		// If it's an empty list.
 		if (first == null)
-			throw new NoSuchElementException("Cannot remove node from empty list.");
+			throw new NoSuchElementException("Cannot remove element from empty list.");
 		// If there's only one element.
 		else if (first.next == null)
 		{
@@ -141,9 +149,9 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @param item
-	 * @return
+	 * Returns true if this list contains the specified element.
+	 * @param item the element whose presence is to be tested
+	 * @return true if the element exists in this list
 	 */
 	public boolean contains(T item)
 	{		
@@ -151,9 +159,12 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
-	 * @param item
-	 * @return
+	 * Determines the location of the element in this list as a distance
+	 * from the beginning of this list. The first element is defined to be
+	 * 1 element from the beginning. Returns -1 if the element does not exist
+	 * in this list.
+	 * @param item the element to be searched in this list
+	 * @return the 1-based index of the element from the front of the list
 	 */
 	public int search(T item)
 	{
@@ -170,8 +181,10 @@ public class LinkedList<T>
 	}
 	
 	/**
-	 * 
+	 * Prints this list with the beginning at the left and pipes between elements.
+	 * Uses the toString() method of the data stored in this list.
 	 */
+	 @Override
 	public String toString()
 	{
 		String ret = "| ";
@@ -190,24 +203,19 @@ public class LinkedList<T>
 		}
 	}
 	
-	/**
-	 * 
-	 * @author SMihalko
-	 *
-	 * @param <T>
-	 */
+	
 	private class Node<T>
 	{
 		private T data;
 		private Node<T> next;
 		
-		public Node(T d)
+		private Node(T d)
 		{
 			data = d;
 			// Keep next as null
 		}
 		
-		public Node(T d, Node<T> nx)
+		private Node(T d, Node<T> nx)
 		{
 			data = d;
 			next = nx;
