@@ -1,18 +1,15 @@
 /**
- * 
+ * A basic stack implementation with linked list backend.
  * @author SMihalko
  *
- * @param <T>
+ * @param <T> the class of data to be stored in this stack
  */
 public class Stack<T>
 {
-	/**
-	 * 
-	 */
-	LinkedList<T> list;
+	private LinkedList<T> list;
 	
 	/**
-	 * 
+	 * Constructs an empty stack.
 	 */
 	public Stack()
 	{
@@ -20,8 +17,8 @@ public class Stack<T>
 	}
 	
 	/**
-	 * 
-	 * @param item
+	 * Pushes the element onto the top of this stack.
+	 * @param item the element to be added to the stack.
 	 */
 	public void push(T item)
 	{
@@ -29,8 +26,9 @@ public class Stack<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Pops the top element of this stack.
+	 * @return the top element of this stack
+	 * @throws NoSuchElementException if this stack is empty
 	 */
 	public T pop()
 	{
@@ -38,8 +36,8 @@ public class Stack<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns true if this stack is empty.
+	 * @return true if this stack is empty, false otherwise.
 	 */
 	public boolean empty()
 	{
@@ -47,8 +45,9 @@ public class Stack<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the element at the top of this stack.
+	 * @return the element at the top of this stack
+	 * @throws NoSuchElementException if this stack is empty
 	 */
 	public T peek()
 	{
