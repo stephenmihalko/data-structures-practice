@@ -55,9 +55,12 @@ public class Stack<T>
 	}
 	
 	/**
-	 * 
-	 * @param item
-	 * @return
+	 * Determines the location of the element in this stack as a distance
+	 * from the top of this stack. The first element is defined to be 1
+	 * element from the top. Returns -1 if the element does not exist
+	 * in this stack.
+	 * @param item the element to be searched in this list
+	 * @return the 1-based index of the element from the front of the list
 	 */
 	public int search(T item)
 	{
@@ -65,7 +68,8 @@ public class Stack<T>
 	}
 	
 	/**
-	 * 
+	 * Prints this stack with the top at the left and pipes between elements.
+	 * Uses the toString() method of the data stored in this stack.
 	 */
 	public String toString()
 	{
