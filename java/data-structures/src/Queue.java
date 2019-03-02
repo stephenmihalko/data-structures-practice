@@ -1,18 +1,15 @@
 /**
- * 
+ * A basic queue implementation with a Linked List backend.
  * @author SMihalko
  *
- * @param <T>
+ * @param <T> the class of data to be stored in this queue
  */
 public class Queue<T>
 {
-	/**
-	 * 
-	 */
 	private LinkedList<T> list;
 	
 	/**
-	 * 
+	 * Constructs an empty queue.
 	 */
 	public Queue()
 	{
@@ -20,8 +17,8 @@ public class Queue<T>
 	}
 	
 	/**
-	 * 
-	 * @param item
+	 * Adds the specified element to the back of this queue.
+	 * @param item the element to be added to this queue
 	 */
 	public void enqueue(T item)
 	{
@@ -29,8 +26,9 @@ public class Queue<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Removes and returns the element at the front of this queue.
+	 * @return the element at the front of this queue
+	 * @throws NoSuchElementException is this queue is empty
 	 */
 	public T dequeue()
 	{
@@ -38,8 +36,9 @@ public class Queue<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the element at the front of this queue.
+	 * @return the element at the front of this queue
+	 * @throws NoSuchElementException is this queue is empty
 	 */
 	public T peek()
 	{
@@ -47,8 +46,8 @@ public class Queue<T>
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns true if this queue is empty.
+	 * @return true if this queue is empty, false otherwise
 	 */
 	public boolean empty()
 	{
